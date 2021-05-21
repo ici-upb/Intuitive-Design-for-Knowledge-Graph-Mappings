@@ -1,39 +1,36 @@
 <template>
-<v-card flat tile outlined height="400">
+  <v-card flat tile outlined height="400">
     <!-- Wrap the JSON displayer in a read only Vue Container -->
     <!-- deals with large JSON Schema as well as small -->
     <v-container style="max-height: 399px" class="overflow-y-auto">
-        <pre v-highlightjs><code class="JSON">{{file}}</code></pre>
+      <pre v-highlightjs>
+        <code class="JSON">{{ file }}</code>
+      </pre>
     </v-container>
-</v-card>
+  </v-card>
 </template>
 
 <script>
 import BE from "../Backend/Backend"
 export default {
-    props: {
-        file: {
-            type: String,
-            default: function () {
-                return {}
-            }
-        }
+  props: {
+    file: {
+      type: String,
+      default: function () {
+        return {}
+      }
+    }
+  }, 
+  created() {
+    this.file = BE.jsonPrettifier(this.file)
+  },
+  watch: {
+    loader() {
+      const loaderContainer = this.loader
+      this[loaderContainer] = !this[loaderContainer]
+      setTimeout(() => (this[loaderContainer] = false), 3000)
+      this.loader = null
     },
-    data: () => ({
-
-    }),
-    created(){
-        this.file = BE.jsonPrettifier(this.file)
-    },
-    watch: {
-        loader() {
-            const l = this.loader
-            this[l] = !this[l]
-
-            setTimeout(() => (this[l] = false), 3000)
-
-            this.loader = null
-        },
-    },
+  },
 }
 </script>

@@ -10,7 +10,7 @@ import Blockly from 'blockly';
 export default {
   name: 'BlocklyComponent',
   props: ['options'],
-  data(){
+  data() {
     return {
       workspace: null
     }
@@ -27,9 +27,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.blocklyDiv {
-  height: 100%;
-  width: 100%;
-  text-align: left;
-}
+  .blocklyDiv {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+  }
 </style>

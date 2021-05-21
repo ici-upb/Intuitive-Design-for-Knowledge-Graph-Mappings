@@ -1,5 +1,5 @@
 <template>
-<v-card flat tile height="400">
+  <v-card flat tile height="400">
     <!--
         For WebVowl to automatically display the uploaded ontology, The ontology must be available on a publicaly accessable webpage.
         The page WebVowl url contains many ways for the ontology to be accessed, including the #file method. This method however requires 
@@ -16,32 +16,17 @@
         -->
     <object type="text/html" width="100%" height="400px" data="http://www.visualdataweb.de/webvowl/#iri=https://sweng-group-10.github.io/Intuitive-Design-for-Knowledge-Graph-Mappings/university.ttl">
     </object>
-</v-card>
+  </v-card>
 </template>
 
 <script>
 export default {
-    methods: {
-        implement(file) {
-            /*   attempt # 10 using axios post to alter the path
-            only allowed to work when running a local host, -> WebVowl not allowed to acces local host.
-            */
-
-           console.log(file)
-            // var formData = new FormData();
-            // formData.append("file", _file);
-            // formData.append("id", 7878);
-            // axios.post("/api/uploadFile", formData)
-            //     .then(function (result) {
-            //         console.log(result);
-            //     }, function (error) {
-            //         console.log(error);
-            //     });
-        }
+  methods: {
+    implement(file) {
+      /*   attempt # 10 using axios post to alter the path
+      only allowed to work when running a local host, -> WebVowl not allowed to acces local host.
+      */
     }
+  }
 }
 </script>
-
-<style>
-
-</style>
